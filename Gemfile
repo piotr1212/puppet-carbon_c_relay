@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
 puppetversion = ENV.key?('PUPPET_VERSION') ? "= #{ENV['PUPPET_VERSION']}" : ['>= 3.3']
 
@@ -29,3 +29,5 @@ if puppetversion = ENV['PUPPET_GEM_VERSION']
 else
   gem 'puppet', :require => false
 end
+
+# vim:ft=ruby
