@@ -110,6 +110,11 @@ class carbon_c_relay (
   $init_file_ensure   = $carbon_c_relay::params::init_file_ensure,
   $init_template      = $carbon_c_relay::params::init_template,
   $interface          = $carbon_c_relay::params::interface,
+  $limitfsize         = $carbon_c_relay::params::limitfsize,
+  $limitcpu           = $carbon_c_relay::params::limitcpu,
+  $limitas            = $carbon_c_relay::params::limitas,
+  $limitnofile        = $carbon_c_relay::params::limitnofile,
+  $limitnproc         = $carbon_c_relay::params::limitnproc,
   $listen             = $carbon_c_relay::params::listen,
   $log_dir            = $carbon_c_relay::params::log_dir,
   $log_file           = $carbon_c_relay::params::log_file,
@@ -123,8 +128,10 @@ class carbon_c_relay (
   $server_queue_size  = $carbon_c_relay::params::server_queue_size,
   $service_enable     = $carbon_c_relay::params::service_enable,
   $service_ensure     = $carbon_c_relay::params::service_ensure,
+  $service_file       = $carbon_c_relay::params::service_file,
   $service_manage     = $carbon_c_relay::params::service_manage,
   $service_name       = $carbon_c_relay::params::service_name,
+  $service_template   = $carbon_c_relay::params::service_template,
   $sysconfig_file     = $carbon_c_relay::params::sysconfig_file,
   $sysconfig_template = $carbon_c_relay::params::sysconfig_template,
   $user               = $carbon_c_relay::params::user,
@@ -143,6 +150,8 @@ class carbon_c_relay (
   )
 
   validate_integer([
+    $limitnofile,
+    $limitnproc,
     $listen,
     $server_batch_size,
     $server_queue_size,
