@@ -34,7 +34,7 @@ node('docker-centos7-puppet') {
     echo "New version will be $NEWVERSION"
 
     stage 'Tagging source repo with new version tag'
-    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '2215c2a6-0dca-44ae-8cf8-8f89747c630e', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '51b230ff-af2b-4a34-82fb-ef1ef238defd', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
         sh 'git config --global user.email "Jenkins@build.paas.intranet" ; \
             git config --global user.name "Jenkins" '
         sh "git tag -m \"Tagging with new version\" -a ${env.NEWVERSION}"
