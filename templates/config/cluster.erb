@@ -1,7 +1,7 @@
 
 cluster <%= @cluster_name %>
-<% if @file -%>
-  file <%= @file %>
+<% if @channel == "file" -%>
+  <%= @channel %> <%= @file %>
   ;
 <%- else -%>
   <% if @channel == "carbon_ch" || @channel == "fnv1a_ch" -%>
