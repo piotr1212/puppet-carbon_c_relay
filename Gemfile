@@ -16,6 +16,8 @@ group :development do
   gem 'guard-rake',      :require => false
   gem 'puppet-strings',  :require => false
   gem 'redcarpet',       :require => false
+  gem 'json',            '1.8.3'
+  gem 'json_pure',	 '1.8.3'
 end
 
 

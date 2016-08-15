@@ -1,3 +1,22 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+tags
+
+RELEASE
+.bundle
+
 coverage/
 Gemfile.lock
 log/
