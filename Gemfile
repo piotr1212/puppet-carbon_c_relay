@@ -7,7 +7,6 @@ group :test do
   gem 'puppetlabs_spec_helper',                        :require => false
   gem 'simplecov',                                     :require => false
   gem 'puppet_facts',                                  :require => false
-  gem 'json',                                          :require => false
   gem 'metadata-json-lint',                            :require => false
   gem 'puppet-lint-duplicate_class_parameters-check',  :require => false
 end
