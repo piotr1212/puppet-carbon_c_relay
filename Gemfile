@@ -14,7 +14,7 @@ group :development do
   gem 'travis',          :require => false
   gem 'travis-lint',     :require => false
   gem 'guard-rake',      :require => false
-  gem 'puppet-strings',  :require => false, :git => 'https://github.com/puppetlabs/puppetlabs-strings.git'
+  gem 'puppet-strings',  :require => false
   gem 'redcarpet',       :require => false
 end
 
