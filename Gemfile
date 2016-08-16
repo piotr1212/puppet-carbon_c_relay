@@ -11,8 +11,6 @@ group :test do
 end
 
 group :development do
-  gem 'travis',          :require => false
-  gem 'travis-lint',     :require => false
   gem 'guard-rake',      :require => false
   gem 'puppet-strings',  :require => false
   gem 'redcarpet',       :require => false
