@@ -10,7 +10,7 @@ class carbon_c_relay::params {
   $init_file                   = '/etc/init.d/carbon-c-relay'
   $init_file_ensure            = 'file'
   $init_template               = "carbon_c_relay${init_file}.erb"
-  $interface                   = 'all'
+  $interface                   = '0.0.0.0'
   $io_timeout                  = 600
   $limit_fsize                 = undef
   $limit_cpu                   = undef
