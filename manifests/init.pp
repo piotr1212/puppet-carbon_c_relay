@@ -59,6 +59,14 @@
 # Specify server max stalls
 # Default: 4
 #
+# [*minimum_version*]
+# Some configuration options are only supported in newer carbon-c-relay
+# releases. The rpm package version fact is fetched at the start of each
+# Puppet run to determine which which options to enable. On initial Puppet run
+# this variable is empty and not all configuration options can be set. To
+# prevent the need for multiple runs the `minimum_version` can be set.
+# Default: '0.0'
+#
 # [*ouput_file*]
 # Specify to which file carbon-c-relay should redirect its output
 #
@@ -156,6 +164,7 @@ class carbon_c_relay (
   $log_dir                     = $carbon_c_relay::params::log_dir,
   $log_file                    = $carbon_c_relay::params::log_file,
   $max_stalls                  = $carbon_c_relay::params::max_stalls,
+  $minimum_version             = $carbon_c_relay::params::minimum_version,
   $output_file                 = $carbon_c_relay::params::output_file,
   $package_ensure              = $carbon_c_relay::params::package_ensure,
   $package_manage              = $carbon_c_relay::params::package_manage,
@@ -218,6 +227,7 @@ class carbon_c_relay (
     $interface,
     $log_dir,
     $log_file,
+    $minimum_version,
     $output_file,
     $package_ensure,
     $package_name,
@@ -229,6 +239,8 @@ class carbon_c_relay (
     $sysconfig_template,
     $user,
   )
+
+  $carbon_c_relay_version = pick($::carbon_c_relay_rpm_version, $minimum_version)
 
   anchor { 'carbon_c_relay::begin': } ->
   class { '::carbon_c_relay::install': } ->

@@ -1,6 +1,7 @@
 #
 class carbon_c_relay::config (
   $allowed_chars               = $carbon_c_relay::allowed_chars,
+  $carbon_c_relay_version      = $carbon_c_relay::carbon_c_relay_version,
   $carbon_cache_statistics     = $carbon_c_relay::carbon_cache_statistics,
   $config_file                 = $carbon_c_relay::config_file,
   $group                       = $carbon_c_relay::group,
@@ -40,7 +41,7 @@ class carbon_c_relay::config (
     notify => Service[$service_name]
   }
 
-  ### Set header for config 
+  ### Set header for config
   concat::fragment { 'header':
     target  => $config_file,
     order   => '10',

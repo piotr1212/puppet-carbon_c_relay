@@ -22,6 +22,7 @@ class carbon_c_relay::params {
   $log_dir                     = '/var/log/carbon-c-relay'
   $log_file                    = 'carbon-c-relay.log'
   $max_stalls                  = 4
+  $minimum_version             = '0.0'
   $output_file                 = undef
   $package_ensure              = latest
   $package_manage              = true
