@@ -18,7 +18,7 @@ class carbon_c_relay::params {
   $limit_no_file               = 64000
   $limit_nproc                 = 64000
   $listen                      = 2003
-  $listen_backlog              = 3
+  $listen_backlog              = 32
   $log_dir                     = '/var/log/carbon-c-relay'
   $log_file                    = 'carbon-c-relay.log'
   $max_stalls                  = 4
