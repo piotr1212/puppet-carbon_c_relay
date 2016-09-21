@@ -1,13 +1,13 @@
 source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? "= #{ENV['PUPPET_VERSION']}" : ['>= 3.3']
-
 group :test do
-  gem 'rspec-core',              :require => false
-  gem 'puppetlabs_spec_helper',  :require => false
-  gem 'simplecov',               :require => false
-  gem 'puppet_facts',            :require => false
-  gem 'metadata-json-lint',      :require => false
+  gem 'rspec-core',                                    :require => false
+  gem 'puppetlabs_spec_helper',                        :require => false
+  gem 'simplecov',                                     :require => false
+  gem 'puppet_facts',                                  :require => false
+  gem 'json',                                          :require => false
+  gem 'metadata-json-lint',                            :require => false
+  gem 'puppet-lint-duplicate_class_parameters-check',  :require => false
 end
 
 group :development do
@@ -15,6 +15,7 @@ group :development do
   gem 'puppet-strings',  :require => false
   gem 'redcarpet',       :require => false
 end
+
 
 if facterversion = ENV['FACTER_GEM_VERSION']
   gem 'facter', facterversion, :require => false

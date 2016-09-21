@@ -21,8 +21,7 @@ node('docker-centos7-puppet') {
     }
 
     stage 'Running unit tests'
-    sh 'FUTURE_PARSER=yes bundle exec rake validate lint strings:generate'
-    publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'doc', reportFiles: 'index.html', reportName: 'module docs'])
+    sh 'FUTURE_PARSER=yes bundle exec rake validate lint'
     sh "[[ ${env.JOBNAME} == ing-* ]] && bundle exec rake spec || true"
 
     stage 'Getting new version variable'
