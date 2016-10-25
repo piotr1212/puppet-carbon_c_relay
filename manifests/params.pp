@@ -45,5 +45,5 @@ class carbon_c_relay::params {
   $sysconfig_file              = '/etc/sysconfig/carbon-c-relay'
   $sysconfig_template          = "carbon_c_relay${sysconfig_file}.erb"
   $user                        = 'carbon-c-relay'
-  $worker_threads              = 4
+  $worker_threads              = undef
 }

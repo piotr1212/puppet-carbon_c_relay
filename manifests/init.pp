@@ -131,6 +131,7 @@
 # Specify the number of seconds between sending data
 #
 # [*worker_threads*]
+# When undefined will fall back to the amount of available cores
 #
 # === Examples
 #
@@ -215,7 +216,6 @@ class carbon_c_relay (
     $server_batch_size,
     $server_queue_size,
     $statistics_sending_interval,
-    $worker_threads,
   ])
 
   validate_string(

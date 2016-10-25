@@ -26,7 +26,7 @@
 
 ARGS= -p <%= @listen -%>
  -i <%= @interface -%>
- -w <%= @worker_threads -%>
+<% if @worker_threads %> -w <%= @worker_threads -%><% end -%>
  -b <%= @server_batch_size -%>
  -q <%= @server_queue_size -%>
  -l <%= @log_dir %>/<%= @log_file -%>
